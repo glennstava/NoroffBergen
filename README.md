@@ -1,2 +1,2 @@
 # NoroffBergen
-Python and SQL-cote shared with my students
+Python and SQL-code shared with my students
