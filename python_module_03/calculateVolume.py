@@ -17,9 +17,9 @@
 
 def inputChecker(measure):
     while True:
-        variable = input(f'please enter {measure}')
+        variable = input(f'please enter {measure}:\t')
         if variable.replace(".", "").isnumeric():
-            variable = int(variable)
+            variable = float(variable)
             break
         else:
             print('\nplease enter a real number:\n')
@@ -33,5 +33,5 @@ height = inputChecker('Heigth')
 volume = length * width * height
 truevolume = volume * 1.01
 
-print(f'The volume of the box is: {volume} cubic')
-print(f'The true volume of the box is: {truevolume} cubic')
+print(f'\nThe volume of the box is: {volume} cubic')
+print(f'The true volume of the box is: {truevolume} cubic\n\n')
