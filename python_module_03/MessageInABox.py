@@ -4,8 +4,6 @@ The end user must enter a number between 0 and 3.
 For each number the application must print a message that is 
 associated with that number from the given data container below: 
 
-message = [“Coding is fun”, “Python is not code, but a way of life”,”We learn Python the fun way”,”We code, because we can”] 
-
 If the user enters 2, the application must print the words: 
 "We learn Python the fun way"
 '''
@@ -36,3 +34,6 @@ def printMessage():
             print("The value entered is incorrect. please try again\n")
 
     input('\nPress enter to continue')
+
+if __name__ == '__main__':
+    printMessage()

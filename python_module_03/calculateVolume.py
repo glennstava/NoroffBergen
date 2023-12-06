@@ -25,13 +25,17 @@ def inputChecker(measure):
             print('\nplease enter a real number:\n')
 
     return variable
-    
-length = inputChecker('Length')
-width = inputChecker('Width')
-height = inputChecker('Heigth')
 
-volume = length * width * height
-truevolume = volume * 1.01
+def VolumeCalculate():
+    length = inputChecker('Length')
+    width = inputChecker('Width')
+    height = inputChecker('Heigth')
 
-print(f'\nThe volume of the box is: {volume} cubic')
-print(f'The true volume of the box is: {truevolume} cubic\n\n')
+    volume = length * width * height
+    truevolume = volume * 1.01
+
+    print(f'\nThe volume of the box is: {volume} cubic')
+    print(f'The true volume of the box is: {truevolume} cubic\n\n')
+
+if __name__ == '__main__':
+    VolumeCalculate()

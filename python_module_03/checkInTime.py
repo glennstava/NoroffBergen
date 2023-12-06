@@ -14,14 +14,15 @@ def timeCheck():
     while True:    
         timeEntered = input("Enter time: (format hh:mm) or press q to quit:  ")
 
-        # first part is to ensure that the data enterd is correct
+        # program exits with q as an input
+        if timeEntered.lower() == 'q':
+            break
+
+        # To ensure that the data enterd is correct
         #  - input is exactly 5 characters
         #  - 3. character (index 2) equals ":"
         #  - first 2 characters is digits
         #  - last 2 characters is digits
-        if timeEntered.lower() == 'q':
-            break
-
         if len(timeEntered) == 5 and timeEntered[2] == ":" and timeEntered[:2].isdigit() and timeEntered[3:].isdigit():
 
             # To simplify we are naming the first 2 digits hour and the second 2 minutes 
@@ -48,3 +49,6 @@ def timeCheck():
             print("Data entered is in the wrong format. (code 01)\n- please try again\n")
 
     input('\npress enter to continue')
+
+if __name__ == '__main__':
+    timeCheck()

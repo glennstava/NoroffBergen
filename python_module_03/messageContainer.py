@@ -12,10 +12,9 @@ that the text has been changed.
 messages = ['', '', '', '']
 
 def addMessages():
-#   global messages
 
     while True:
-        messageNumber = input("\nplease enter a number, between 1 and 3: or press q to quit  ")
+        messageNumber = input("\nplease enter a number, between 0 and 3: or press q to quit  ")
 
         if messageNumber.lower() == 'q':
             break
@@ -38,16 +37,19 @@ def addMessages():
         
         if valg.lower() in ['y', 'n']:
 
-            if valg.lower() == 'y' and len(messages) != 0:
+            if valg.lower() == 'y':
                 for m in messages:
                     if m != '':
                         print(m)
             else:
                 print('No messages to print')
+
             break
 
         else:
             print('Invalid selection, please try again\n')
 
-    input('Press enter to continue')
+    input('\nPress enter to continue')
 
+if __name__ == '__main__':
+    addMessages()

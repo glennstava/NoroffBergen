@@ -46,3 +46,6 @@ def guessNumber():
 
     print(f"Program ran {counter} time{pl}\n\n")
     input('Press enter to continue')
+
+if __name__ == '__main__':
+    guessNumber()
