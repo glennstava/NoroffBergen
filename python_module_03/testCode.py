@@ -1,53 +1,63 @@
-
 from checkInTime import timeCheck
 from guessTheNumber import guessNumber
 from MessageInABox import printMessage
 from messageContainer import addMessages
 
-def aFiftGame():
-    print('Hei 5')
-
-def aSixtGame():
-    print('Hei 6')
-
 gamedict = {'Guess the number' : guessNumber, 
             'Calculate time' : timeCheck, 
             'Print something' : printMessage, 
-            'Change a print option' : addMessages,
-            'Game 5' : aFiftGame,
-            'Game 6' : aSixtGame}
+            'Change a print option' : addMessages}
 
-newGames = list(gamedict.keys())
+games = list(gamedict.keys())
 newFunc = list(gamedict.values())
 
-line = '-' * 30
-
-print('\n\n')
-print(line)
-print('Menu System')
-print(line) 
-print()
-
-for num, game in enumerate(newGames, start = 1):
-    print(f'{num} - {game}')
+def showMenu(gameList):
+    line = '-' * 30
+    print('\n\n')
+    print(line)
+    print('Menu System')
+    print(line) 
     print()
 
-print(line) 
-print()
-
-
-while True:
-    choice = input('Make a selection, or press q to quit:  ')
-    
-    if choice.lower() == 'q':
-        break
-    
-    if choice.isnumeric() and int(choice) -1 in range(len(newGames)):
-        choice = int(choice) - 1
-
-        gameToRun = newFunc[choice]()  
-        gameToRun
+    for num, game in enumerate(gameList, start = 1):
+        print(f'{num} - {game}')
         print()
+
+    print(line) 
+    print()
+
+# ---------
+# Start of program
+
+def runProgram():
     
-    else:
-        print('Invalid input\n') 
+    showMenu(games)
+
+    while True:
+        choice = input('Make a selection, or press q to quit\nor press m to see the Menu again:  ')
+        
+        if choice.lower() == 'q':
+            break
+
+        if choice.lower() == 'm':
+            showMenu(games)
+            print()
+        
+        elif choice.isnumeric() and int(choice) -1 in range(len(games)):
+            choice = int(choice) - 1
+
+            gameToRun = newFunc[choice]()  
+            gameToRun
+            print()
+
+        else:
+            print('Invalid input\n') 
+
+
+if __name__ == '__main__':
+    runProgram()
+
+    print()
+    print('.' * 20)
+    print('program ended')
+    input('Press Enter\n\n')
