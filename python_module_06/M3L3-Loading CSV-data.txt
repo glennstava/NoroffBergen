@@ -1,0 +1,9 @@
+SHOW GLOBAL VARIABLES LIKE 'local_infile';
+SET GLOBAL local_infile = true;
+
+LOAD DATA LOCAL INFILE
+"C:\\Users\\noro-gst\\OneDrive - Noroff Education AS\\Documents\\Temp\\Mock_data_usernames_01.csv"
+INTO TABLE login
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
