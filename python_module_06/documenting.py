@@ -1,4 +1,3 @@
-import ping3
 import platform
 
 class Cars:
@@ -21,5 +20,4 @@ class Cars:
     # Sets the docstrings property of the function.
 #    my_function.__doc__ = "This is an overview of what MyFunction does."
 
-# help(Cars)
-help(ping3)
+help(Cars)
